@@ -41,3 +41,12 @@
 - 新增：README 中的跨 agent 启动消息。它要求实际读取两个 Skill 和引用文件，并说明私有仓库访问限制。
 - 已运行：`git fetch origin`；命令成功，随后检查本地与远端分支关系。
 - 下一步：完成发布前检查，提交并推送，再记录实际远端结果；当前尚未把计划中的发布记为完成。
+
+## 2026-10-04T14:47:00-07:00 — Skill 更新已发布并核对远端
+
+- 发布前复查：两个官方 Skill 校验通过，3 项打包测试通过，22 个本地引用可解析，暂存差异检查通过。
+- 用户告知仓库已改为 public；实际运行 `gh repo view yuxuandexter/agent-task-skills --json nameWithOwner,visibility,url`，确认 `visibility` 为 `PUBLIC`。
+- 已运行：`git commit -m 'Improve task previews, communication, and execution records'`，得到提交 `15c9912abcd1e08406ebc44231016c669040a7a5`。
+- 已运行：`git push origin main`；推送成功。随后 `git rev-parse HEAD` 与 `git ls-remote origin refs/heads/main` 返回相同提交。
+- 交付：README 已含可复制的跨 agent 启动消息。可直接读取公开仓库，无需私有访问授权；实际执行仍取决于 agent 的工具与项目权限。
+- 此条记录关闭发布任务，随文档收尾提交保存；不涉及新的 Skill 行为改动。
