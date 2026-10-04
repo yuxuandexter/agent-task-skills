@@ -1,0 +1,4 @@
+interface:
+  display_name: "执行并验证 Agent 任务"
+  short_description: "依据任务说明持续执行和验证，在授权范围内迭代并交付可检查的证据"
+  default_prompt: "用 $execute-agent-task 执行这份任务说明，在授权范围内持续推进，并逐项验证交付结果。"

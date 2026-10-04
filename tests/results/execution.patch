@@ -1,0 +1,50 @@
+--- a/latency_summary.py
++++ b/latency_summary.py
+@@ -7,6 +7,7 @@
+     Raise ValueError when no completed rows exist. Every 'ok' row has a
+     numeric duration_ms. Other row statuses may have missing durations.
+     """
+-    if not rows:
++    durations = [row["duration_ms"] for row in rows if row.get("status") == "ok"]
++    if not durations:
+         raise ValueError("No completed samples")
+-    return sum(row.get("duration_ms", 0) for row in rows) / len(rows)
++    return sum(durations) / len(durations)
+--- a/test_latency_summary.py
++++ b/test_latency_summary.py
+@@ -19,6 +19,35 @@
+         with self.assertRaises(ValueError):
+             mean_completed_latency([])
+ 
++    def test_other_statuses_are_ignored_even_with_durations(self):
++        self.assertEqual(
++            mean_completed_latency(
++                [
++                    {"status": "ok", "duration_ms": 10},
++                    {"status": "error", "duration_ms": 1000},
++                    {"status": "timeout", "duration_ms": 2000},
++                    {"status": "pending"},
++                    {"status": "OK", "duration_ms": 3000},
++                    {"duration_ms": 4000},
++                    {"status": "ok", "duration_ms": 20},
++                ]
++            ),
++            15,
++        )
++
++    def test_no_ok_samples_raises_value_error(self):
++        for rows in (
++            [{"status": "error", "duration_ms": 100}],
++            [{"status": "pending"}],
++            [
++                {"status": "timeout", "duration_ms": 200},
++                {"status": "pending"},
++            ],
++        ):
++            with self.subTest(rows=rows):
++                with self.assertRaises(ValueError):
++                    mean_completed_latency(rows)
++
+ 
+ if __name__ == "__main__":
+     unittest.main()
