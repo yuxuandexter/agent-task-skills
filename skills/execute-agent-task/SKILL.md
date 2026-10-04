@@ -7,7 +7,7 @@ description: Carry out authorized multi-step work against a task brief or suffic
 
 Keep working toward the user's outcome within the established scope. Let observed evidence determine the next action and whether the task is complete. This is an initial practice for research, engineering, and evidence-based knowledge work.
 
-Read [the task contract](references/task-contract.md) before execution. It defines the handoff and completion semantics, not a required document format.
+Read [the task contract](references/task-contract.md) before execution. It defines handoff, completion, and communication guidance. Use it to make findings, evidence, and remaining gaps easy to inspect without imposing a fixed document format.
 
 ## Take over the actual task
 
@@ -19,9 +19,19 @@ Verify execution authority from the user's instructions and applicable policy. A
 
 A framing-only request ends at the brief. A direct request to implement a clear task is sufficient to begin the authorized implementation, subject to actual workspace gates.
 
+## Keep a visible task folder
+
+For multi-step execution, read [the task records guide](references/task-records.md) when starting or resuming work. Keep a task folder in the project being worked on, using its existing convention or `tasks/<task-slug>/` by default. Initialize it after necessary context reading and before implementation or experiments, when task and workspace permissions allow those writes. Show the user its location.
+
+Use `README.md` for the brief, intended delivery, current phase, next action, required decisions, and evidence summary; use `work-log.md` for significant observed actions and results. Respect read-only requests, narrower write scopes, no-save instructions, and actual project gates. If records cannot be saved, state that limit and keep the same information in the conversation without claiming it was persisted.
+
+On resume, read the relevant task records and inspect actual files, artifacts, and any process being relied on. Reconcile stale entries and invalidated evidence before choosing the next action. Give a concise status update; a saved plan or an old running status is not proof of current progress or authority.
+
 ## Work in evidence-producing increments
 
-Maintain the smallest useful mapping between required outcomes, current work, and observed evidence. Use session tracking by default; save a checkpoint when requested or authorized and genuinely needed for recovery. Do not create a parallel task database.
+Before a meaningful phase, state the question or outcome it addresses and the evidence needed to decide what follows. Keep dependent work behind unresolved prerequisites; independent authorized work can continue. A reproduced failure or a well-supported negative research result can satisfy a phase's purpose.
+
+Keep the task homepage current and record significant findings, changes, and checks in the work log. Separate planned steps from observed results; do not log every read or duplicate large tool outputs.
 
 At each iteration:
 
@@ -30,6 +40,7 @@ At each iteration:
 3. Inspect actual output and run the checks appropriate to the affected behavior or claim.
 4. Compare the evidence with the original acceptance conditions.
 5. Continue, change the route, request a necessary decision, or finish based on that comparison.
+6. Update the task records with the result, supporting evidence, and next action after each meaningful increment.
 
 For research, choose experiments or sources that discriminate among plausible explanations. Preserve failed attempts and negative findings when they affect interpretation. For optimization, establish comparable baseline conditions and keep evaluation conditions stable. Never improve apparent success by quietly weakening acceptance or changing the benchmark.
 
@@ -43,7 +54,7 @@ Follow the host's update requirements. At meaningful discoveries or phase change
 
 For an actual decision, provide the evidence, available options, recommendation, and effect on the task. A short decision record is enough; do not expose or request hidden chain-of-thought.
 
-For a handoff or interruption, summarize the current goal and constraints, verified results with evidence locations, unresolved hypotheses, significant failed attempts, remaining work, and the next useful action. Mark a suggested resume action as suggested, not already performed.
+At a blocker, handoff, or completion, refresh the task records and summarize the current goal and constraints, verified results with evidence locations, unresolved hypotheses, significant failed attempts, remaining work, and the next useful action. For an interruption, save only if the host and user instruction still permit it. Mark a suggested resume action as suggested, not already performed.
 
 ## Verify the outcome before declaring completion
 
@@ -70,4 +81,4 @@ Report the actual outcome in plain language:
 
 For investigation goals, a well-supported negative conclusion or a justified evidence limitation can be the agreed completed outcome. For implementation goals, inability to verify a required behavior remains a gap.
 
-Deliver a concise result, a requirement-to-evidence mapping proportional to the task, important limitations, and any decision still needed. Link directly to the evidence and give a minimal reproduction or inspection path. Commit, push, publication, and external actions follow the actual authorization; completion itself grants none.
+Deliver a concise result, a requirement-to-evidence mapping proportional to the task, important limitations, and any decision still needed. Link to the task homepage and directly to the evidence, and give a minimal reproduction or inspection path. If task records could not be saved, deliver the equivalent summary in the conversation. Commit, push, publication, and external actions follow the actual authorization; completion itself grants none.

@@ -4,11 +4,13 @@
 
 | 一手来源 | 采用的原则 | 在本仓库中的适配 |
 | --- | --- | --- |
+| [ASD-STE100 — About STE](https://www.asd-ste100.org/about_STE.html) | 受控表达、稳定词义和领域术语帮助减少技术沟通歧义 | 借鉴清晰性原则；沿用用户语言，不施加英文受控词典，也不声称标准合规 |
+| [Google — Short sentences](https://developers.google.com/tech-writing/one/short-sentences) | 一句集中表达一个意思，删去多余词语，必要时拆分步骤 | 保留条件、因果、例外和不确定性；不以固定字数或句子越短越好作为验收 |
 | [OpenAI — Using Goals in Codex](https://developers.openai.com/cookbook/examples/codex/using_goals_in_codex) | 用结果、验证证据、约束、边界、迭代策略和受阻条件定义工作 | 以普通任务说明承载这些含义；持久 Goal 需要明确请求和宿主支持 |
 | [Karpathy — autoresearch/program.md](https://github.com/karpathy/autoresearch/blob/master/program.md) | 固定评价条件、限定可修改范围、先建立 baseline、记录实际实验结果 | 保留可比较性与结果记录；不沿用无限循环、固定五分钟预算或自动 Git 操作 |
 | [Karpathy — Verifiability](https://karpathy.bearblog.dev/verifiability/) | 可验证的反馈影响自动优化的可行性 | 没有可靠验收方式时，先定义有限的验证方法探索 |
 | [Google Antigravity — Best practices](https://www.antigravity.google/docs/cli/best-practices/) | 探索、规划、执行分阶段；让 agent 根据本地验证反馈迭代 | 简单请求可以直接处理，复杂任务才使用完整交接 |
-| [Google Antigravity — Artifacts](https://www.antigravity.google/docs/artifacts) | 使用可评论、可检查的产物进行阶段性协作 | 默认聊天中的简短说明；有需要且获授权时保存文档和检查材料 |
+| [Google Antigravity — Artifacts](https://www.antigravity.google/docs/artifacts) | 使用可评论、可检查的产物进行阶段性协作 | framing 先给简短预览；多步骤 execution 在权限允许时保存可查看的任务记录与证据位置 |
 | [Google ADK — Evaluation](https://adk.dev/evaluate/) | 同时检查最终结果与工具使用过程 | 关注会影响结论的来源、实际动作和结果；不把每个工具调用都变成人工审批 |
 | [Google ADK — Loop workflow](https://adk.dev/agents/workflow-agents/loop-agents/) | 循环需要明确退出机制 | 区分完成、人工验收、受阻、预算或用户停止；不依赖具体旧版 LoopAgent API |
 | [Google Cloud — Agent KPIs](https://cloud.google.com/transform/the-kpis-that-actually-matter-for-production-ai-agents) | 人的验证时间与返工影响 agent 的实际价值 | 交付直接证据链接与最小检查路径，不给用户建立个人评分表 |
@@ -18,6 +20,20 @@
 | [GitHub Spec Kit — Quickstart](https://github.com/github/spec-kit/blob/main/docs/quickstart.md) | 分开需求、技术计划和执行，最后回查遗漏 | 保留目标与实现细节的区分，省去固定文档链和任务数据库 |
 | [GSD — Verifier](https://github.com/gsd-build/get-shit-done/blob/main/agents/gsd-verifier.md) | 从目标倒推必须成立的事实，检查实际产物与行为 | 完成核对以要求和证据为单位，不使用任务打勾比例推断成功 |
 | [Anthropic — Effective harnesses for long-running agents](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents) | 增量推进与清晰交接帮助跨上下文恢复工作 | 有需要且获授权时保留检查点；不声称一份 Skill 能提供常驻运行 |
+
+## 清晰表达的适配边界
+
+Communication 是本仓库独立撰写的轻量规则。ASD-STE100 的公开介绍和 Google 写作指南提供清晰表达原则；事实、推断、拟议检查和未验证结论的区分来自本仓库的证据要求。没有将这些要求宣称为 ASD-STE100 原文，也没有审查全文标准或完成严格合规认证。
+
+规则用于降低任务说明和交付报告的阅读与核验成本，不强制用户填写新模板或查看写作检查表。准确性优先于简短，用户要求的产物风格保持有效。实际可读性收益仍需通过日常使用验证。
+
+## 用户提供的 phase-workflow 与任务目录
+
+2026-10-04，用户提供了一份 `phase-workflow` Skill 文本，并明确希望使用 tasks folder 查看和管理 agent 的工作。该文本的作者、上游地址和版本未核实；此处保留来源描述，不复制附件全文或本地附件路径。
+
+借鉴其计划与实际记录分离、阶段验证、恢复任务前读取记录的思路。默认只保留每个任务的首页和工作记录，优先沿用项目已有格式。阶段继续条件允许失败复现和有依据的否定结论；恢复操作需保护原有改动，不能采用整文件还原或目录删除作为通用撤销方式。
+
+这次用户选择把多步骤执行从默认会话记录改为默认任务目录，仍受实际写入范围和项目规则约束。没有引入全局 Todo、逐步骤审批、固定层级编号或永不修订的 lessons 文件。记录描述观察到的状态，不能证明后台进程存活。
 
 ## 本地创建规范
 

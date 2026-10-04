@@ -7,7 +7,7 @@ description: Turn a substantial or underspecified request into an executable tas
 
 Help the user express intent in their own language, then do the work of making it actionable. Produce the smallest brief another agent can execute and the user can inspect. This is an initial practice for research, engineering, and evidence-based knowledge work.
 
-Read [the task contract](references/task-contract.md) when forming or assessing a brief. Use its semantic requirements without forcing every field into every response.
+Read [the task contract](references/task-contract.md) when forming or assessing a brief. Apply its communication guidance to make the goal, acceptance conditions, and open decisions clear, without forcing every field into every response.
 
 ## Establish the intended outcome
 
@@ -45,9 +45,17 @@ Choose low-impact, reversible implementation details yourself when authorized; d
 
 Clarification is not renewed permission. A user who already authorized the work should not have to approve the same scope again. Preserve any project-specific preview or release gates that actually apply.
 
+## Preview the intended delivery
+
+Open the brief with a concise, user-visible preview of the final delivery before handing off or starting execution. Necessary context reading can come first. Usually a short paragraph or a few bullets is enough. Describe what the user will receive, what it will help them decide or do, and the evidence they will be able to inspect. Include material scope limits or open choices that could reveal a mismatch with their intent.
+
+Describe the intended artifact or result in the user's terms, rather than listing implementation steps. For an investigation, preview the question and form of evidence, not a predetermined finding. Keep planned output distinct from completed work; do not invent results, measurements, or passed checks to make the preview concrete.
+
+The preview is the opening of the brief, not a second full plan. In framing-only mode, return it with the brief and stop. If execution is already authorized and no consequential gap remains, show the preview before continuing; it does not create another approval gate. When the user explicitly requests confirmation before execution, or an applicable project gate requires it, wait for that confirmation.
+
 ## Deliver and hand off
 
-Return a brief scaled to the task: a few sentences for bounded work, a compact structured note for longer work. Include source pointers and the decision behind significant constraints so a fresh agent can pick it up without reconstructing the entire conversation.
+Scale the rest of the brief to the task without repeating the preview: a few sentences for bounded work, a compact structured note for longer work. Include source pointers and the decision behind significant constraints so a fresh agent can pick it up without reconstructing the entire conversation.
 
 Before handing off, check:
 
@@ -55,7 +63,7 @@ Before handing off, check:
 - Can each material completion claim be checked?
 - Is there an actionable first step and a way to choose subsequent steps?
 - Are unresolved assumptions, resource limits, and authorization boundaries explicit where they matter?
-- Is the final delivery easy for the user to review?
+- Does the preview let the user recognize the intended delivery and its evidence before execution?
 
 If the user requested framing or discussion only, finish with the brief and any unresolved decision. Keep it in the conversation unless saving it was requested or already authorized under applicable workspace rules.
 
