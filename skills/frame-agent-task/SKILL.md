@@ -7,7 +7,7 @@ description: Discuss a task and prepare a reviewable goal document plus a copyab
 
 Help the user express intent, review the intended delivery, and prepare the materials for a later execution request. Finish the framing turn after delivering those materials. Earlier broad implementation permission, a complete brief, or the user's agreement with the wording does not automatically start execution through this skill.
 
-Read [the task contract](references/task-contract.md) to define the goal and evidence. Read [the goal handoff guide](references/goal-handoff.md) when choosing documents, saving a goal, or drafting the Goal message. Use the user's language and scale the brief to the task.
+Read [the task contract](references/task-contract.md) to define the goal and evidence. Read [the goal handoff guide](references/goal-handoff.md) when choosing documents, saving a goal, or drafting the Goal message. Use the user's language and the contract's concise response defaults. Keep the goal complete without making the user read the same content twice.
 
 ## Discuss the intended outcome
 
@@ -35,17 +35,19 @@ Do not invent performance thresholds, budgets, datasets, deadlines, access, or a
 
 ## Preview and prepare the handoff
 
-Lead with a concise preview of what the eventual execution will deliver, what it helps the user decide or do, and the evidence they can inspect. A short paragraph or a few bullets is enough. Describe the intended result, not a list of implementation steps. Keep it separate from the framing deliverables and from work already completed.
+Open with a brief plain-language summary of the outcome and its purpose. Then provide a complete expected-delivery preview. For each material deliverable, say what the user will receive, what it includes or does, its intended form or location when known, and how acceptance will be checked. Include relevant limits, unresolved choices, and any judgment reserved for the user. A simple task can use one paragraph; use separate items when several outputs need review. Do not invent extra artifacts to fill a template.
+
+The user will inspect this preview to catch a wrong direction or missing output before execution. Do not reduce it to artifact names, a vague promise, or a link. Describe expected results, not implementation steps or claimed completed work. Keep wording plain and explain an unfamiliar term only when needed. This preview is not subject to a fixed sentence or bullet limit.
 
 Discuss the necessary documents. Default to `tasks/<task-slug>/goal.md` for the goal agreement. The executor maintains `README.md` for status and `work-log.md` for actual history. Add context or a separate plan only when the task benefits from it; reuse existing project conventions.
 
-Preview goal content in the conversation. Once the content is agreed and document preparation is authorized, save the agreed goal and any necessary supporting material. Discussion-only or no-write requests stay in the conversation. If saving is unavailable, return the full draft and proposed location, and state that no file was saved. Do not create empty progress logs merely to simulate a started task.
+Preview one compact, complete goal draft in the conversation. Include the outcome, acceptance, boundaries, stop conditions, and consequential unknowns; expand only where needed for an informed decision or a project preview rule. Once the content is agreed and document preparation is authorized, save it with any necessary supporting material. Discussion-only or no-write requests stay in the conversation. State when a proposed file was not saved. Do not create empty progress logs merely to simulate a started task.
 
 Prepare a copyable Goal message that explicitly invokes `execute-agent-task` and includes the concrete outcome, core evidence, key constraints, and the actual goal-document location when saved. Keep that explicit skill instruction in ordinary execution messages as well as native Goal messages. Generate it from the same agreed content. If consequential questions remain, label the document and message as draft rather than ready to launch.
 
 ## Deliver and stop
 
-Return the concise delivery preview, the goal document or draft, a list of necessary handoff files and their actual save status, the Goal message, and any unresolved decision. Avoid duplicating the full brief in each item.
+During discussion, answer the current point briefly; do not repeat the full goal and Goal message each turn. At the final framing handoff, include the complete expected-delivery preview in the reply, even if its items were discussed earlier. Add the saved goal link or single inline draft and a copyable Goal message. State actual save status and consequential open decisions. Do not paste a saved goal in full or explain the Goal message line by line unless requested. The user must be able to review all promised outputs from this handoff without reconstructing earlier messages or opening every file.
 
 Before ending, check that the documents and message preserve the user's intent, agree on acceptance and scope, distinguish known facts from proposed checks, and contain no invented results or permissions. A ready Goal message must contain the task's actual outcome and criteria, not unfilled template fields.
 

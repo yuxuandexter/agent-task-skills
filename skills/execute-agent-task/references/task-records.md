@@ -18,7 +18,7 @@ An explicit start with an unavailable confirmed goal requires resolving that mis
 
 ## Task homepage: the current view
 
-Keep `README.md` short enough to scan. It links to the goal document and shows the current state, not a second goal specification or full event history. Use the user's language. Include the current phase, next action, required user decisions, and an evidence summary mapped to the goal's acceptance conditions.
+Keep `README.md` short enough to scan. Open with the current result or status, next action, and any decision needed. Keep detailed history in the work log; do not repeat it in the homepage or chat. It links to the goal document and shows the current state, not a second goal specification or full event history. Use the user's language. Include the current phase, next action, required user decisions, and an evidence summary mapped to the goal's acceptance conditions.
 
 Put the status and last-updated timestamp near the top. Distinguish in progress, waiting for a decision, blocked, ready for human review, verified, and stopped with partial results as applicable. These are recorded observations, not host lifecycle commands or proof that a process is alive. Use actual time with timezone when available; never fabricate a timestamp or completion percentage.
 

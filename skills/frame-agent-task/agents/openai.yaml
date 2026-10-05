@@ -1,4 +1,4 @@
 interface:
   display_name: "讨论并准备 Agent 目标"
   short_description: "讨论目标与验收，准备 goal.md 和 Goal message，交付后停止"
-  default_prompt: "用 $frame-agent-task 与我讨论需求，预览交付并准备目标文档和 Goal message；本轮不执行任务。"
+  default_prompt: "用 $frame-agent-task 讨论需求，朴实、完整地列出预期交付及验收，再准备目标文档和 Goal message；本轮不执行。"

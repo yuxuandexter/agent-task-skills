@@ -12,37 +12,27 @@ Before writing, verify actual preparation authorization and workspace rules. A u
 
 ## Goal document shape
 
-Adapt this outline to the user's language and project format:
+Use the smallest complete form in the user's language. A short task can use these bullets rather than a section for every field:
 
 ```markdown
 # Task title
 
-## Purpose
-The need or decision this work serves.
-
-## Goal and intended delivery
-The observable outcome, artifact, or bounded question to resolve.
-
-## Acceptance and evidence
-Each material requirement, its check, and the evidence source.
-Distinguish proposed checks, inspected facts, and reserved human checks.
-
-## Scope and constraints
-Allowed work and resources, protected behavior, and authorization limits.
-
-## Resources and stop conditions
-Actual limits, successful completion, and conditions requiring user input.
-State unspecified limits and resolve consequential resource questions.
-
-## Context and open questions
-Necessary source locations, assumptions, relevant decisions, and unresolved choices.
+- Purpose: The need or decision this work serves.
+- Goal: The observable outcome.
+- Expected delivery: Each material item, what it contains or does, and its intended form or location when known.
+- Acceptance: What must be true, how to check it, and evidence sources.
+- Scope: Allowed changes, protected behavior, and authority limits.
+- Stop: Actual resource limits, completion, and required user decisions.
+- Context: Necessary sources, assumptions, and consequential open questions.
 ```
+
+Connect each expected deliverable to its acceptance checks and evidence. Distinguish inspected facts from planned checks and reserved human checks. Expand a field or add a table when several items need separate review. Keep all material criteria. The final framing reply must also explain all material expected outputs; a document link alone is not a delivery preview.
 
 Reuse known answers. Do not add numeric thresholds or budgets just to fill a section. Keep implementation steps tentative; the executor can develop and revise the approach within the agreed target. Identify the agreed revision when available so a later executor can detect a material change.
 
 ## Generate the Goal message
 
-Return the message in a copyable block. Begin by explicitly selecting `execute-agent-task`, whether the user will submit a native Goal or an ordinary execution prompt. Summarize the core outcome, verification surface, essential constraints, and goal location. It must make sense beyond "finish the file": a path alone is not an auditable completion condition.
+Prepare the message at the requested handoff, not in every discussion reply. Return one compact, copyable block. Use short sentences; do not explain each line or repeat the full goal around it. Begin by explicitly selecting `execute-agent-task`, whether the user will submit a native Goal or an ordinary execution prompt. Summarize the core outcome, verification surface, essential constraints, and goal location. It must make sense beyond "finish the file": a path alone is not an auditable completion condition.
 
 A pattern to fill with the actual agreed details:
 

@@ -29,16 +29,27 @@ This table distinguishes an evidence plan from observed evidence. It is not a sc
 
 ## Communication
 
-Use these STE-inspired guidelines for task briefs, progress updates, handoffs, and final reports. Follow the user's language and requested format or artifact style. They draw on ASD-STE100's clarity principles, but are not a claim of strict compliance; an English controlled dictionary or fixed sentence-length limit is not required.
+Make the reply easy to understand on one reading. Apply these STE-inspired rules in the user's language. This is an adaptation, not strict ASD-STE100 compliance or a requirement to write in English. Respect the requested artifact style.
 
-- Lead with the result, intended outcome, or decision the reader needs to make. Add the explanation needed to assess it.
-- Keep each sentence focused on one main idea. Preserve causal and conditional connections; use lists for separate steps or comparable items, not for every sentence.
-- Name the action and its object. Make the responsible actor and relevant conditions explicit when ambiguity could change the work. Replace vague instructions such as "validate appropriately" with what to inspect and how to judge it, without inventing criteria.
-- Use the same term for the same concept. Preserve necessary domain terms, identifiers, and the user's Chinese-English terminology; explain an unfamiliar term when needed rather than replacing it with an inaccurate synonym.
-- Distinguish observed facts, interpretations, proposed checks, and unverified claims. Put evidence and its limits near the claim they support. Fluent or confident wording is not evidence.
-- Simplify wording without dropping meaning. Preserve conditions, exceptions, units, uncertainty, and material limitations. Keep code and direct quotations intact. Accuracy takes precedence over brevity.
+- Use familiar words, short sentences, and active voice. State one main idea per sentence. For instructions, give one action per step and put a necessary condition before the action.
+- Name who does what. Prefer concrete verbs to abstract labels. Explain an unfamiliar term briefly when first needed; keep precise technical names and identifiers. Use the same term for the same thing.
+- Lead with the result or intended delivery. Add the evidence or reason the user needs to assess it. Remove filler, repeated context, and explanations of your own workflow.
+- Keep ordinary discussion and progress brief: a short paragraph or 3–5 short bullets is usually enough. Expected-delivery previews and final delivery reports must cover every material deliverable, even when this needs more space. Use plain wording; do not compress away content the user needs to review. Use a list or table when several deliverables need separate checks.
+- Avoid duplicate explanations. Keep detailed methods, full evidence, and work history in authorized documents. In chat, state every material expected deliverable, what it includes, and how it will be checked; at completion, report each agreed deliverable's actual status and evidence. Links support this review, not replace it. If saving is unavailable, give a complete inline record and say it was not saved. Supply the required copyable Goal message.
+- Keep decision-changing limits in the reply: failed or missing checks, unresolved choices, and reserved human acceptance. Put evidence status next to the claim. Do not hide a material gap behind a link or call a proposed check a passed test.
+- Preserve conditions, exceptions, units, uncertainty, and permission boundaries when shortening. Keep code and quotations intact. Simplicity must not change the agreed task.
 
-Before delivery, check that the reader can find the outcome, supporting evidence or evidence plan, and any required decision without losing important context. Revise the text directly; do not add a separate writing checklist to every response.
+During discussion, address the current question or decision. Do not regenerate the whole goal and launch message in every reply. At the requested handoff, supply the necessary materials together.
+
+Use these response shapes without mechanically adding headings:
+
+| Moment | What the user needs in chat |
+| --- | --- |
+| Framing handoff | A complete expected-delivery preview: each material item, its contents or behavior, intended form, and acceptance evidence. State relevant limits and human decisions. Add the goal link or draft and copyable Goal message. The user must be able to review the promised delivery from the reply itself. |
+| Progress | What changed, what the evidence shows, and the next useful action. Usually 1–3 sentences. |
+| Execution delivery | Account for every agreed deliverable: what was delivered, where to inspect it, its verification result, and any gap or human check. Explain any user-approved change from the expected delivery. Link detailed evidence and records. |
+
+Before sending, remove repeated material and replace vague terms with concrete words. Check that the user can understand the result and any needed decision without opening a file. Do not print this writing checklist or append an offer to explain every time.
 
 ## Readiness and authority
 

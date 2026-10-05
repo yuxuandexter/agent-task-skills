@@ -10,7 +10,7 @@
 | [Karpathy — autoresearch/program.md](https://github.com/karpathy/autoresearch/blob/master/program.md) | 固定评价条件、限定可修改范围、先建立 baseline、记录实际实验结果 | 保留可比较性与结果记录；不沿用无限循环、固定五分钟预算或自动 Git 操作 |
 | [Karpathy — Verifiability](https://karpathy.bearblog.dev/verifiability/) | 可验证的反馈影响自动优化的可行性 | 没有可靠验收方式时，先定义有限的验证方法探索 |
 | [Google Antigravity — Best practices](https://www.antigravity.google/docs/cli/best-practices/) | 探索、规划、执行分阶段；让 agent 根据本地验证反馈迭代 | 简单请求可以直接处理，复杂任务才使用完整交接 |
-| [Google Antigravity — Artifacts](https://www.antigravity.google/docs/artifacts) | 使用可评论、可检查的产物进行阶段性协作 | framing 先给简短预览；多步骤 execution 在权限允许时保存可查看的任务记录与证据位置 |
+| [Google Antigravity — Artifacts](https://www.antigravity.google/docs/artifacts) | 使用可评论、可检查的产物进行阶段性协作 | framing 给出完整、朴实的交付预览；多步骤 execution 在权限允许时保存可查看的任务记录与证据位置 |
 | [Google ADK — Evaluation](https://adk.dev/evaluate/) | 同时检查最终结果与工具使用过程 | 关注会影响结论的来源、实际动作和结果；不把每个工具调用都变成人工审批 |
 | [Google ADK — Loop workflow](https://adk.dev/agents/workflow-agents/loop-agents/) | 循环需要明确退出机制 | 区分完成、人工验收、受阻、预算或用户停止；不依赖具体旧版 LoopAgent API |
 | [Google Cloud — Agent KPIs](https://cloud.google.com/transform/the-kpis-that-actually-matter-for-production-ai-agents) | 人的验证时间与返工影响 agent 的实际价值 | 交付直接证据链接与最小检查路径，不给用户建立个人评分表 |
@@ -26,6 +26,8 @@
 Communication 是本仓库独立撰写的轻量规则。ASD-STE100 的公开介绍和 Google 写作指南提供清晰表达原则；事实、推断、拟议检查和未验证结论的区分来自本仓库的证据要求。没有将这些要求宣称为 ASD-STE100 原文，也没有审查全文标准或完成严格合规认证。
 
 规则用于降低任务说明和交付报告的阅读与核验成本，不强制用户填写新模板或查看写作检查表。准确性优先于简短，用户要求的产物风格保持有效。实际可读性收益仍需通过日常使用验证。
+
+2026-10-05，用户反馈输出太长、难以理解，因此将“简洁”改为可执行的输出约定。[ASD-STE100 官方 FAQ](https://www.asd-ste100.org/STE_faq.html) 明确允许将短句、一个句子一个主题和主动表达等原则用于其他写作场景；本仓库据此保留中文及必要术语。默认短回复、文档承载细节和禁止重复粘贴是本仓库针对用户反馈的设计，不是 STE 标准原文。用户需要详细解释或重要条件无法简写时仍应展开。用户随后明确补充：措辞要朴实，但会仔细检查最终 expected delivery。因此，短回复建议仅用于普通讨论与进度；framing 交接必须完整说明每项预期交付及验收，execute 最终报告必须逐项对照实际交付。文件链接不能代替这份说明。
 
 ## 用户提供的 phase-workflow 与任务目录
 

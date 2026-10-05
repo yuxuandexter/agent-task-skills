@@ -54,11 +54,11 @@ When an attempt fails, diagnose the failure and choose a retry or alternative fo
 
 ## Keep the user oriented
 
-Follow the host's update requirements. At meaningful discoveries or phase changes, state what was learned, what remains uncertain, and what the next action will resolve. Do not seek "continue?" approval between already authorized steps.
+Follow the host's update requirements and the contract's concise response defaults. At meaningful discoveries or phase changes, use 1–3 plain sentences: what changed, what the evidence shows, and the next action. Mention uncertainty when it affects the next step. Do not repeat the plan or narrate routine tool calls. Do not seek "continue?" approval between authorized steps.
 
-For an actual decision, provide the evidence, available options, recommendation, and effect on the task. A short decision record is enough; do not expose or request hidden chain-of-thought.
+For an actual decision, name the choice, recommend an option, and give the reason and important tradeoff briefly. Keep only options that matter. Preserve enough evidence for the decision; do not expose or request hidden chain-of-thought.
 
-At a blocker, handoff, or completion, refresh the task records and summarize the current goal and constraints, verified results with evidence locations, unresolved hypotheses, significant failed attempts, remaining work, and the next useful action. For an interruption, save only if the host and user instruction still permit it. Mark a suggested resume action as suggested, not already performed.
+At a blocker, handoff, or completion, refresh the task records with the goal reference, verified results, evidence, important failed attempts, unresolved issues, and next action. In chat, state the outcome and facts needed for the user's next decision; link to the records. At final delivery, account for every agreed deliverable as described below. If saving is unavailable, provide a compact inline handoff. For an interruption, save only if still permitted. Mark a suggested resume action as suggested, not performed.
 
 ## Verify the outcome before declaring completion
 
@@ -85,4 +85,6 @@ Report the actual outcome in plain language:
 
 For investigation goals, a well-supported negative conclusion or a justified evidence limitation can be the agreed completed outcome. For implementation goals, inability to verify a required behavior remains a gap.
 
-Deliver a concise result, a requirement-to-evidence mapping proportional to the task, important limitations, and any decision still needed. Link to the task homepage and directly to the evidence, and give a minimal reproduction or inspection path. If task records could not be saved, deliver the equivalent summary in the conversation. Commit, push, publication, and external actions follow the actual authorization; completion itself grants none.
+Lead with the actual outcome, then account for every material deliverable in the agreed expected-delivery preview. For each item, state what was delivered, where to inspect it, the verification result and evidence, and anything missing or awaiting human judgment. Explain any user-approved change from the expected delivery. Use plain sentences and a list or table when items need separate review; the final report has no fixed sentence or bullet limit.
+
+Keep detailed methods, reproduction steps, and work history in the records when available; link to them without replacing the delivery account with links alone. If records could not be saved, provide a complete inline summary. Never omit an agreed output, failed check, or pending human acceptance to shorten the reply. Commit, push, publication, and external actions follow actual authorization; completion itself grants none.

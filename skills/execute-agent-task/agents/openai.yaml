@@ -1,4 +1,4 @@
 interface:
   display_name: "启动并验证 Agent 目标"
   short_description: "收到明确启动后，依据已确认目标执行、记录进度并验证最终结果"
-  default_prompt: "现在用 $execute-agent-task 按已确认的 goal.md 开始执行，记录实际进度并验证交付结果。"
+  default_prompt: "现在用 $execute-agent-task 按已确认的 goal.md 执行并验证；进度简短，最终逐项说明交付、证据和缺口，措辞朴实。"
