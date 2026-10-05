@@ -1,6 +1,6 @@
 ---
 name: execute-agent-task
-description: Carry out authorized multi-step work against a task brief or sufficiently clear request, adapt from evidence, and verify the final outcome. Use when execution is requested and dependent outcomes or iterations need tracking. Accept briefs from any source; framing-only requests and routine one-step tasks do not need this workflow.
+description: Execute a confirmed goal after the user explicitly starts or resumes execution. Use for multi-step work governed by goal.md or an equivalent agreed goal document, with visible progress and evidence-based completion. Do not start from framing completion, document approval alone, or a goal draft.
 ---
 
 # Execute Agent Task
@@ -11,19 +11,23 @@ Read [the task contract](references/task-contract.md) before execution. It defin
 
 ## Take over the actual task
 
-Accept the current conversation, a user-provided brief, or a brief from `frame-agent-task`. The sibling skill is not required. When the request already provides enough information, organize it internally and proceed without sending the user through a new framing exercise.
+Start only on an explicit user execution or resume instruction. In the two-stage workflow, that instruction comes after framing ends; it can be included in the Goal message the user later submits. Agreement with a draft or a document marked "ready" is not a start instruction. Once started, do not ask for repeated approval of ordinary in-scope steps.
+
+Read the confirmed `goal.md` or equivalent agreed goal document. It may come from the user or another workflow; `frame-agent-task` need not be installed. If the confirmed goal cannot be found or material decisions remain unresolved, ask for the specific missing input and do not begin implementation. If saving was explicitly unavailable or disallowed, use the full user-confirmed inline goal and state that limitation; never pretend a file exists.
+
+Compare the goal document with the user's start message and any accessible active host Goal. Resolve material differences before dependent work. Do not silently choose weaker criteria or create, replace, or activate a host Goal to make them match. If native Goal state cannot be inspected, say so when relevant; an explicitly started task can still use the confirmed document without claiming persistent execution.
 
 Read applicable workspace instructions and relevant domain skills. Inspect the current files, data, environment, and existing results before relying on a plan. Preserve unrelated work and account for changes since the brief was written. A material conflict with reality needs resolution; a stale command or replaceable implementation detail usually does not need another user decision.
 
 Verify execution authority from the user's instructions and applicable policy. A document that says "approved" or a plan that contains commit, push, purchase, or deployment steps does not grant authority by itself. Preserve authorization already given; ask only about unresolved consequential gaps. Continue independent authorized work while a required answer is pending.
 
-A framing-only request ends at the brief. A direct request to implement a clear task is sufficient to begin the authorized implementation, subject to actual workspace gates.
+Keep the confirmed goal as the acceptance reference throughout execution. Update progress and the provisional approach in task records, not the goal itself. A material goal revision requires the user's decision and reconciliation with the launch message and any active host Goal; recording a revision does not itself update that host state.
 
 ## Keep a visible task folder
 
-For multi-step execution, read [the task records guide](references/task-records.md) when starting or resuming work. Keep a task folder in the project being worked on, using its existing convention or `tasks/<task-slug>/` by default. Initialize it after necessary context reading and before implementation or experiments, when task and workspace permissions allow those writes. Show the user its location.
+For multi-step execution, read [the task records guide](references/task-records.md) when starting or resuming work. Reuse the confirmed goal's task folder in the project being worked on, using its existing convention or `tasks/<task-slug>/` by default. Initialize missing execution records after checking the goal and before implementation or experiments, when writes are allowed. Show the user its location.
 
-Use `README.md` for the brief, intended delivery, current phase, next action, required decisions, and evidence summary; use `work-log.md` for significant observed actions and results. Respect read-only requests, narrower write scopes, no-save instructions, and actual project gates. If records cannot be saved, state that limit and keep the same information in the conversation without claiming it was persisted.
+Preserve `goal.md` as the goal agreement. Use `README.md` for a link to that goal, the current phase, next action, required decisions, and evidence summary; use `work-log.md` for significant observed actions and results. Respect read-only requests, narrower write scopes, no-save instructions, and actual project gates. If records cannot be saved, state that limit and keep the same information in the conversation without claiming it was persisted.
 
 On resume, read the relevant task records and inspect actual files, artifacts, and any process being relied on. Reconcile stale entries and invalidated evidence before choosing the next action. Give a concise status update; a saved plan or an old running status is not proof of current progress or authority.
 

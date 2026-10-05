@@ -1,4 +1,4 @@
 interface:
-  display_name: "明确 Agent 任务"
-  short_description: "从自由描述整理目标、验收证据与执行边界，形成可交接的任务说明"
-  default_prompt: "用 $frame-agent-task 帮我把下面的需求整理成可执行、方便验收的任务说明。"
+  display_name: "讨论并准备 Agent 目标"
+  short_description: "讨论目标与验收，准备 goal.md 和 Goal message，交付后停止"
+  default_prompt: "用 $frame-agent-task 与我讨论需求，预览交付并准备目标文档和 Goal message；本轮不执行任务。"
