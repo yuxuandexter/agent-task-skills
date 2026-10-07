@@ -11,17 +11,17 @@ Read [the task contract](references/task-contract.md) before execution. It defin
 
 ## Take over the actual task
 
-Start only on an explicit user execution or resume instruction. In the two-stage workflow, that instruction comes after framing ends; it can be included in the Goal message the user later submits. Agreement with a draft or a document marked "ready" is not a start instruction. Once started, do not ask for repeated approval of ordinary in-scope steps.
+Start only on an explicit user execution or resume instruction. In the two-stage workflow, that instruction comes after framing ends, normally in the Start message. The Goal message defines completion; a goal draft alone is not a start instruction. If the host starts work on Goal activation, the user may submit the Goal and Start text together when ready. Agreement with a draft or a document marked "ready" is not a start instruction. Once started, do not ask for repeated approval of ordinary in-scope steps.
 
 Read the confirmed `goal.md` or equivalent agreed goal document. It may come from the user or another workflow; `frame-agent-task` need not be installed. If the confirmed goal cannot be found or material decisions remain unresolved, ask for the specific missing input and do not begin implementation. If saving was explicitly unavailable or disallowed, use the full user-confirmed inline goal and state that limitation; never pretend a file exists.
 
-Compare the goal document with the user's start message and any accessible active host Goal. Resolve material differences before dependent work. Do not silently choose weaker criteria or create, replace, or activate a host Goal to make them match. If native Goal state cannot be inspected, say so when relevant; an explicitly started task can still use the confirmed document without claiming persistent execution.
+Compare the goal document with any supplied Goal message, the user's Start message, and any accessible active host Goal. Resolve material differences before dependent work. Do not silently choose weaker criteria or create, replace, or activate a host Goal to make them match. If native Goal state cannot be inspected, say so when relevant; an explicitly started task can still use the confirmed document without claiming persistent execution.
 
 Read applicable workspace instructions and relevant domain skills. Inspect the current files, data, environment, and existing results before relying on a plan. Preserve unrelated work and account for changes since the brief was written. A material conflict with reality needs resolution; a stale command or replaceable implementation detail usually does not need another user decision.
 
 Verify execution authority from the user's instructions and applicable policy. A document that says "approved" or a plan that contains commit, push, purchase, or deployment steps does not grant authority by itself. Preserve authorization already given; ask only about unresolved consequential gaps. Continue independent authorized work while a required answer is pending.
 
-Keep the confirmed goal as the acceptance reference throughout execution. Update progress and the provisional approach in task records, not the goal itself. A material goal revision requires the user's decision and reconciliation with the launch message and any active host Goal; recording a revision does not itself update that host state.
+Keep the confirmed goal as the acceptance reference throughout execution. Update progress and the provisional approach in task records, not the goal itself. A material goal revision requires the user's decision and reconciliation with both handoff messages and any active host Goal; recording a revision does not itself update that host state.
 
 ## Keep a visible task folder
 

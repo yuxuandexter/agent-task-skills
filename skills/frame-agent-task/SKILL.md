@@ -1,13 +1,13 @@
 ---
 name: frame-agent-task
-description: Discuss a task and prepare a reviewable goal document plus a copyable Goal message. Use when the user wants to clarify outcomes, acceptance, scope, or execution handoff. This skill prepares the task and stops; it does not implement the task, run experiments, activate Goals, or invoke execution.
+description: Discuss a task and prepare a reviewable goal document plus separate, copyable Goal and Start messages. Use when the user wants to clarify outcomes, acceptance, scope, or execution handoff. This skill prepares the task and stops; it does not implement the task, run experiments, activate Goals, or invoke execution.
 ---
 
 # Frame Agent Task
 
 Help the user express intent, review the intended delivery, and prepare the materials for a later execution request. Finish the framing turn after delivering those materials. Earlier broad implementation permission, a complete brief, or the user's agreement with the wording does not automatically start execution through this skill.
 
-Read [the task contract](references/task-contract.md) to define the goal and evidence. Read [the goal handoff guide](references/goal-handoff.md) when choosing documents, saving a goal, or drafting the Goal message. Use the user's language and the contract's concise response defaults. Keep the goal complete without making the user read the same content twice.
+Read [the task contract](references/task-contract.md) to define the goal and evidence. Read [the goal handoff guide](references/goal-handoff.md) when choosing documents, saving a goal, or drafting the Goal and Start messages. Use the user's language and the contract's concise response defaults. Keep the goal complete without making the user read the same content twice.
 
 ## Discuss the intended outcome
 
@@ -43,12 +43,14 @@ Discuss the necessary documents. Default to `tasks/<task-slug>/goal.md` for the 
 
 Preview one compact, complete goal draft in the conversation. Include the outcome, acceptance, boundaries, stop conditions, and consequential unknowns; expand only where needed for an informed decision or a project preview rule. Once the content is agreed and document preparation is authorized, save it with any necessary supporting material. Discussion-only or no-write requests stay in the conversation. State when a proposed file was not saved. Do not create empty progress logs merely to simulate a started task.
 
-Prepare a copyable Goal message that explicitly invokes `execute-agent-task` and includes the concrete outcome, core evidence, key constraints, and the actual goal-document location when saved. Keep that explicit skill instruction in ordinary execution messages as well as native Goal messages. Generate it from the same agreed content. If consequential questions remain, label the document and message as draft rather than ready to launch.
+Prepare two separate copyable blocks with visible labels: **Goal message** and **Start message**. The Goal message defines the concrete outcome, expected delivery, acceptance evidence, constraints, stop conditions, and actual goal-document location. It is goal-setting text, not a command to start execution. The Start message explicitly invokes `execute-agent-task` and asks it to start the confirmed task, read the same goal, reconcile accessible Goal state, keep task records, and verify each deliverable.
+
+Generate both from the same agreed content. Keep the blocks distinct even when the host accepts them together at activation. Do not replace either with a link or make the user compose the Start message. If consequential questions remain, label the document and both messages as drafts. Follow the handoff guide for hosts where activating a Goal immediately starts work.
 
 ## Deliver and stop
 
-During discussion, answer the current point briefly; do not repeat the full goal and Goal message each turn. At the final framing handoff, include the complete expected-delivery preview in the reply, even if its items were discussed earlier. Add the saved goal link or single inline draft and a copyable Goal message. State actual save status and consequential open decisions. Do not paste a saved goal in full or explain the Goal message line by line unless requested. The user must be able to review all promised outputs from this handoff without reconstructing earlier messages or opening every file.
+During discussion, answer the current point briefly; do not repeat the full handoff each turn. At the final framing handoff, include the complete expected-delivery preview, the saved goal link or inline draft, and the two labeled blocks: Goal message first, Start message second. State actual save status and consequential open decisions. Do not paste a saved goal in full or explain each message line by line unless requested. The user must be able to review all promised outputs from this handoff without reconstructing earlier messages or opening every file.
 
-Before ending, check that the documents and message preserve the user's intent, agree on acceptance and scope, distinguish known facts from proposed checks, and contain no invented results or permissions. A ready Goal message must contain the task's actual outcome and criteria, not unfilled template fields.
+Before ending, check that the goal document and both messages agree on the task, acceptance, scope, and document location. Distinguish known facts from proposed checks; invent no results, permissions, saved files, or active Goal state. Ready messages use actual task details, not unfilled template fields. The Goal message defines completion; the Start message carries the explicit execution instruction.
 
-End the framing turn here. Do not call `execute-agent-task`, activate a persistent Goal, or begin implementation. The user later submits an explicit execution instruction, possibly as part of activating their Goal. A response such as "the draft looks right" is not that start instruction. Once the user does explicitly start execution in a later request, use the execution workflow without requiring another framing cycle.
+End the framing turn here. Do not call `execute-agent-task`, activate a persistent Goal, or begin implementation. The user later submits the Start message, separately or with Goal activation as their host requires. A response such as "the draft looks right" is not that start instruction. Once the user does explicitly start execution in a later request, use the execution workflow without requiring another framing cycle.

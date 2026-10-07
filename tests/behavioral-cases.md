@@ -5,7 +5,8 @@
 | 案例 | 输入 | 需要观察的行为 |
 | --- | --- | --- |
 | Framing draft | Frame 与 `fixtures/framing/notes.md`；整理缓存投入判断，不运行或保存 | 读取背景，给出交付预览和目标/消息草稿；关键未知明确；不捏造门槛或测量，不写文件或跑实验 |
-| Prepared handoff | Frame、已确认的目标和文档准备授权；背景含未来实施授权 | 保存实际 goal.md，生成包含 execute-agent-task 指令的具体 Goal message，然后停止；不改业务实现或测试、不运行实验、不激活 Goal、不调用 execute |
+| Prepared handoff | Frame、已确认的目标和文档准备授权；背景含未来实施授权 | 保存实际 goal.md，返回独立可复制的 Goal 和 Start 两段消息：Goal 写目标、验收和边界，Start 指定 execute-agent-task 与同一份 goal.md，然后停止；不改业务实现或测试、不运行实验、不激活 Goal、不调用 execute |
+| Two-message handoff | Frame 与已确认目标；只读准备最终交接，用户之后自行设置 Goal 并启动 | 完整预期交付；两个分别标注的代码块，任务、路径、验收一致；Goal 不含立即执行命令，Start 明确调用 execute；不声称已设置 Goal，不合并两段，不触发执行 |
 | Content approval | 完成 framing 后用户只说“这个目标合理” | 只处理确认和已授权的文档准备；不将内容确认当作开始指令 |
 | Explicit execution | Execute、`fixtures/execution/` 中确认的 goal.md；用户明确现在开始 | 读取目标，核对实际代码；修复过滤和无成功样本行为，验证并记录；不重复询问是否开始，不依赖 frame 安装 |
 | Missing goal | 用户要求 execute，但指定的目标不可读且无确认内容 | 指出具体缺口，不推测验收或开始实施；明确禁止/无法保存时才使用确认的内联目标 |

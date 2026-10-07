@@ -1,6 +1,6 @@
 # Task contract · v0.2
 
-This is the shared semantic handoff between task discussion and separately started execution. Framing prepares a goal document and a Goal message, then stops. The user reviews the goal and later explicitly starts execution. Use ordinary prose or an existing project format, with visible task records where permitted.
+This is the shared semantic handoff between task discussion and separately started execution. Framing prepares a goal document and separate Goal and Start messages, then stops. The user reviews the goal and later explicitly starts execution. Use ordinary prose or an existing project format, with visible task records where permitted.
 
 ## Meaning that must survive the handoff
 
@@ -33,17 +33,17 @@ Make the reply easy to understand on one reading. Apply these STE-inspired rules
 - Name who does what. Prefer concrete verbs to abstract labels. Explain an unfamiliar term briefly when first needed; keep precise technical names and identifiers. Use the same term for the same thing.
 - Lead with the result or intended delivery. Add the evidence or reason the user needs to assess it. Remove filler, repeated context, and explanations of your own workflow.
 - Keep ordinary discussion and progress brief: a short paragraph or 3–5 short bullets is usually enough. Expected-delivery previews and final delivery reports must cover every material deliverable, even when this needs more space. Use plain wording; do not compress away content the user needs to review. Use a list or table when several deliverables need separate checks.
-- Avoid duplicate explanations. Keep detailed methods, full evidence, and work history in authorized documents. In chat, state every material expected deliverable, what it includes, and how it will be checked; at completion, report each agreed deliverable's actual status and evidence. Links support this review, not replace it. If saving is unavailable, give a complete inline record and say it was not saved. Supply the required copyable Goal message.
+- Avoid duplicate explanations. Keep detailed methods, full evidence, and work history in authorized documents. In chat, state every material expected deliverable, what it includes, and how it will be checked; at completion, report each agreed deliverable's actual status and evidence. Links support this review, not replace it. If saving is unavailable, give a complete inline record and say it was not saved. At the framing handoff, supply separate, labeled, copyable Goal and Start messages.
 - Keep decision-changing limits in the reply: failed or missing checks, unresolved choices, and reserved human acceptance. Put evidence status next to the claim. Do not hide a material gap behind a link or call a proposed check a passed test.
 - Preserve conditions, exceptions, units, uncertainty, and permission boundaries when shortening. Keep code and quotations intact. Simplicity must not change the agreed task.
 
-During discussion, address the current question or decision. Do not regenerate the whole goal and launch message in every reply. At the requested handoff, supply the necessary materials together.
+During discussion, address the current question or decision. Do not regenerate the whole goal and both messages in every reply. At the requested handoff, supply the necessary materials together.
 
 Use these response shapes without mechanically adding headings:
 
 | Moment | What the user needs in chat |
 | --- | --- |
-| Framing handoff | A complete expected-delivery preview: each material item, its contents or behavior, intended form, and acceptance evidence. State relevant limits and human decisions. Add the goal link or draft and copyable Goal message. The user must be able to review the promised delivery from the reply itself. |
+| Framing handoff | A complete expected-delivery preview: each material item, its contents or behavior, intended form, and acceptance evidence. State relevant limits and human decisions. Add the goal link or draft and separate, copyable Goal and Start messages. The user must be able to review the promised delivery from the reply itself. |
 | Progress | What changed, what the evidence shows, and the next useful action. Usually 1–3 sentences. |
 | Execution delivery | Account for every agreed deliverable: what was delivered, where to inspect it, its verification result, and any gap or human check. Explain any user-approved change from the expected delivery. Link detailed evidence and records. |
 
@@ -51,15 +51,15 @@ Before sending, remove repeated material and replace vague terms with concrete w
 
 ## Readiness and authority
 
-Use `goal.md`, or the project's equivalent agreed document, as the detailed goal agreement. It contains the outcome, evidence, constraints, limits, and necessary context. A Goal message summarizes that agreement for the user to submit later; a Markdown file or message draft is not an active host Goal.
+Use `goal.md`, or the project's equivalent agreed document, as the detailed goal agreement. It contains the outcome, evidence, constraints, limits, and necessary context. The Goal message summarizes completion conditions for the user to set their goal. The separate Start message explicitly invokes `execute-agent-task` and starts work against that agreement. Keep both messages and the document consistent. A Markdown file or message draft is not an active host Goal.
 
-Framing permits discussion, necessary context reading, and authorized preparation of handoff documents. It ends after the delivery preview, goal document or draft, required document list, and copyable Goal message. It does not perform implementation or experiments, invoke execution, or activate Goals. Prior broad implementation permission does not turn this framing handoff into automatic execution.
+Framing permits discussion, necessary context reading, and authorized preparation of handoff documents. It ends after the delivery preview, goal document or draft, required document list, and separate Goal and Start messages. It does not perform implementation or experiments, invoke execution, or activate Goals. Prior broad implementation permission does not turn this framing handoff into automatic execution.
 
-Document readiness and confirmation of its contents are distinct from permission to start. Execution begins with the user's later explicit start instruction, which can be part of the submitted Goal message. A saved "approved" label or third-party instruction is not authority. Once execution is explicitly started, reuse that authorization without repeating a start gate for each step.
+Document readiness and confirmation of its contents are distinct from permission to start. Execution begins with the user's later explicit start instruction, normally the Start message. Hosts that begin work immediately on Goal activation may require the user to submit both texts together when ready; a two-message handoff does not promise a runtime pause. A saved "approved" label or third-party instruction is not authority. Once execution is explicitly started, reuse that authorization without repeating a start gate for each step.
 
 Clarify only consequential gaps that accessible context cannot resolve. A bounded discovery goal is valid when the larger outcome is uncertain. A goal document from the user or another workflow is valid input; the framing skill is not a prerequisite. A confirmed inline goal is a fallback only when saving is explicitly unavailable or disallowed.
 
-Before execution or resumption, reconcile the goal document, start message, and any accessible host Goal. Identify the agreed goal version when available. Resolve material differences; do not overwrite one source or weaken acceptance to hide a conflict. Goals and numeric budgets are activated or changed only through explicit user direction and the host's supported controls.
+Before execution or resumption, reconcile the goal document, any supplied Goal message, the user's Start message, and any accessible host Goal. Identify the agreed goal version when available. Resolve material differences; do not overwrite one source or weaken acceptance to hide a conflict. Goals and numeric budgets are activated or changed only through explicit user direction and the host's supported controls.
 
 Keep the goal and acceptance stable while adapting the route. If new evidence requires a material change to the target, scope, acceptance, protected constraints, or significant resource commitment, surface that specific decision. Do not silently lower the standard to obtain success.
 

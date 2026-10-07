@@ -12,7 +12,7 @@ Inspect an existing folder before reusing it. Resume the same task there; choose
 
 Framing or the user prepares `goal.md` before execution. Read it at startup and preserve its outcome, acceptance, boundaries, and important context during ordinary progress updates. An equivalent existing project document can serve the same role; do not duplicate its requirements in several files.
 
-The homepage links to the goal and identifies its agreed revision when available. If the user approves a material revision, record the decision and changed reference, then reconcile the Goal message and any host Goal before continuing affected work. Do not silently edit the goal to fit observed results. A ready label does not start execution.
+The homepage links to the goal and identifies its agreed revision when available. If the user approves a material revision, record the decision and changed reference, then reconcile both the Goal and Start messages and any host Goal before continuing affected work. Do not silently edit the goal to fit observed results. A ready label does not start execution.
 
 An explicit start with an unavailable confirmed goal requires resolving that missing input. When saving is explicitly disallowed or unavailable, preserve the user-confirmed inline goal and state which records remain in the conversation. Do not fabricate saved documents or native Goal state.
 

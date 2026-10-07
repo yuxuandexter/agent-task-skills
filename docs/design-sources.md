@@ -43,9 +43,15 @@ Communication 是本仓库独立撰写的轻量规则。ASD-STE100 的公开介�
 
 [OpenAI 的 Goals 指南](https://developers.openai.com/cookbook/examples/codex/using_goals_in_codex) 建议先从自然语言形成目标草稿，核对成功条件、证据、约束和停止条件，再激活目标。本仓库据此将目标 agreement 与执行记录分开：`goal.md` 保留确认的目标，README 展示状态，work-log 记录实际工作。无需为每个任务建立完整 spec 链。
 
-[OpenAI 的长任务说明](https://learn.chatgpt.com/docs/long-running-work) 指出 `/goal` 的文字同时是首条任务指令与完成条件。因此，framing 只交付可复制消息，不能自行激活；用户准备开始时提交的消息应包含 execute 指令和具体成功条件。不能承诺设置 Goal 后会等待另一条消息。普通宿主也可依确认文档和明确启动消息执行，但不因此获得持久运行能力。
+[OpenAI 的长任务说明](https://learn.chatgpt.com/docs/long-running-work) 指出 `/goal` 的文字同时是首条任务指令与完成条件。当时的版本将 execute 指令与成功条件放在同一条 Goal message 中，framing 只交付文字，不自行激活。2026-10-07 起按下述新约定拆为两段。不能承诺设置 Goal 后会等待另一条消息。普通宿主也可依确认文档和明确启动消息执行，但不因此获得持久运行能力。
 
-目标文档是详细约定，Goal message 是启动摘要；实质变更后需保持一致。用户确认目标内容不等于启动。执行开始后，普通范围内步骤沿用授权，不逐步重新审批。
+当时以目标文档作为详细约定，Goal message 作为启动摘要；实质变更后保持一致。用户确认目标内容不等于启动。执行开始后，普通范围内步骤沿用授权，不逐步重新审批。
+
+## Goal message 与 Start message 分开 · 2026-10-07
+
+用户明确要求 framing 最后返回两个独立、可复制的消息。Goal message 定义结果、预期交付、验收、约束与停止条件，用于用户设置目标；Start message 明确调用 execute-agent-task，读取同一份目标文档并开始执行。完整预期交付说明仍保留在最终回复中，两段消息不代替交付预览。
+
+再次核对 [OpenAI 的长任务说明](https://learn.chatgpt.com/docs/long-running-work)：激活 `/goal` 时，其文字也会作为首条指令。因此两段消息是交接材料的分工，不是宿主一定会暂停等待的承诺。支持只保存目标的宿主可分开设置与启动；激活即运行的宿主应由用户在准备好时提交两段内容。Framing 不代替用户提交任何一段，也不假定 Goal 已设置成功。
 
 ## 本地创建规范
 
